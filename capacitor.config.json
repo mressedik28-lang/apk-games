@@ -1,0 +1,8 @@
+{
+  "appId": "com.moonshotarena.game",
+  "appName": "Moonshot Arena",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "https"
+  }
+}

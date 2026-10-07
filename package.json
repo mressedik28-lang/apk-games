@@ -1,0 +1,23 @@
+{
+  "name": "moonshot-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Original cross-platform online arena FPS with public and private rooms.",
+  "main": "server.js",
+  "scripts": {
+    "build:web": "node scripts/prepare-web.js",
+    "prestart": "npm run build:web",
+    "start": "node server.js",
+    "android:init": "npx cap add android",
+    "android:sync": "npm run build:web && npx cap sync android",
+    "android:apk": "npm run android:sync && cd android && gradlew.bat assembleDebug && cd .. && node scripts/copy-apk.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "express": "^5.1.0",
+    "three": "^0.180.0",
+    "ws": "^8.18.3"
+  }
+}
